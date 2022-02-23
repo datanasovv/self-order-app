@@ -5,6 +5,8 @@ import {
   Container,
   Paper,
 } from "@material-ui/core";
+import { BrowserRouter, Route } from "react-router-dom";
+import ChooseScreen from "./screens/ChooseScreen";
 import HomeScreen from "./screens/HomeScreen";
 
 const theme = createTheme({
@@ -25,14 +27,21 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth="sm">
-        <Paper>
-          <HomeScreen></HomeScreen>
-        </Paper>
-      </Container>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container maxWidth="sm">
+          <Paper>
+              <Route path="/" component={HomeScreen} exact={true}></Route>
+              <Route
+                path="/choose"
+                component={ChooseScreen}
+                exact={true}
+              ></Route>
+          </Paper>
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
