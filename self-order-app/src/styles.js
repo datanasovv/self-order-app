@@ -71,4 +71,7 @@ export const useStyles = makeStyles((theme) => ({
   between: {
     justifyContent: "space-between",
   },
+  column: {
+    flexDirection: "column",
+  },
 }));
